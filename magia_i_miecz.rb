@@ -118,9 +118,12 @@ class MagiaIMiecz
     end
 
     def move_up?
-      @player.y = 26
-      @player.x = 66
-      get_tile_point[:can_win]
+      can_win = get_tile_point[:can_win]
+      if can_win
+        @player.y = 26
+        @player.x = 66
+      end
+      can_win
     end
 
     def get_tile_point
